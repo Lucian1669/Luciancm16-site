@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sa ai o zi minunata!</title>
+  <style>
+    /* Variabile ușor de schimbat */
+    :root{
+      --bg-pink: #ff4d8a;      /* fundal roz (poți schimba) */
+      --accent-pink: #ff79a6;  /* roz pentru accente */
+      --text-white: #ffffff;
+      --btn-bg: rgba(255,255,255,0.12);
+      --btn-border: rgba(255,255,255,0.28);
+      --max-width: 720px;
+    }
+
+    /* Reset simplu */
+    *{box-sizing:border-box;margin:0;padding:0}
+
+    html,body{
+      height:100%;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg-pink);
+      color:var(--text-white);
+    }
+
+    /* Centrare conținut vertical și limitare lățime pentru mobile/tablet */
+    .page{
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:space-between;
+      padding:18px 16px;
+      gap:12px;
+      max-width:var(--max-width);
+      margin:0 auto;
+    }
+
+    /* Header: logo + buton în stânga, titlu centrat */
+    header{
+      width:100%;
+      position:relative; /* pentru poziționare absolută a elementelor din stânga */
+      display:flex;
+      align-items:center;
+      justify-content:center; /* titlu va fi centrat */
+      padding-top:6px;
+      padding-bottom:6px;
+    }
+
+    /* Container stânga (logo + buton) */
+    .left-controls{
+      position:absolute;
+      left:8px;
+      top:50%;
+      transform:translateY(-50%);
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+
+    /* Buton link */
+    .insta-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      background:var(--btn-bg);
+      border:1px solid var(--btn-border);
+      text-decoration:none;
+      color:var(--text-white);
+      font-weight:600;
+      font-size:14px;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+
+    .insta-btn:active,
+    .insta-btn:focus{
+      transform:translateY(1px);
+    }
+
+    /* Mini logo (svg) */
+    .insta-logo{
+      width:28px;
+      height:28px;
+      display:inline-block;
+      flex-shrink:0;
+    }
+
+    /* Titlu mare centrat */
+    .hero-title{
+      text-align:center;
+      font-size:24px;
+      line-height:1.05;
+      font-weight:800;
+      letter-spacing:0.2px;
+      padding:6px 12px;
+      /* alb cu umbrelă roz pentru contrast vizibil */
+      color:var(--text-white);
+      text-shadow: 0 2px 0 rgba(0,0,0,0.08), 0 0 18px rgba(255,121,166,0.18);
+    }
+
+    /* Variantă pentru ecrane mari */
+    @media (min-width:420px){
+      .hero-title{ font-size:28px; }
+      .insta-btn{ font-size:15px; padding:9px 12px; }
+    }
+
+    /* Conținutul principal ocupă spațiu */
+    main{
+      width:100%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-start;
+      gap:12px;
+    }
+
+    /* Imaginea bear la baza paginii, se scalează pe mobil */
+    .bear-wrap{
+      width:100%;
+      display:flex;
+      justify-content:center;
+      margin-top:8px;
+      margin-bottom:8px;
+    }
+    .bear{
+      width:92%;
+      max-width:640px;
+      height:auto;
+      border-radius:16px;
+      object-fit:cover;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.02));
+    }
+
+    /* Footer mic (opțional) */
+    footer{
+      font-size:12px;
+      opacity:0.92;
+      padding-bottom:6px;
+      text-align:center;
+    }
+  </style>
+</head>
+<body>
+  <div class="page" role="document">
+    <header>
+      <!-- Stânga-sus: logo + buton (deschide contul tău Instagram într-o filă nouă) -->
+      <div class="left-controls">
+        <!-- Logo Instagram (SVG inline, licență friendly - folosit doar ca icon) -->
+        <a class="insta-btn" href="https://www.instagram.com/luciancm16/" target="_blank" rel="noopener noreferrer" aria-label="Mergi la Instagram - luciancm16">
+          <svg class="insta-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <linearGradient id="g1" x1="0" x2="1">
+              <stop offset="0" stop-color="#f58529"/>
+              <stop offset="0.5" stop-color="#dd2a7b"/>
+              <stop offset="1" stop-color="#8134af"/>
+            </linearGradient>
+            <rect x="2" y="2" width="20" height="20" rx="5" fill="url(#g1)"/>
+            <path d="M12 7.2a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6zm6.2-1.1a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z" fill="#fff" opacity="0.95"/>
+            <circle cx="12" cy="11.999" r="3.2" fill="#fff" />
+          </svg>
+          <span>Instagram</span>
+        </a>
+      </div>
+
+      <!-- Titlu centrat -->
+      <h1 class="hero-title">Să ai o zi minunată!</h1>
+    </header>
+
+    <main>
+      <!-- spațiu liber (poți pune conținut suplimentar aici) -->
+      <div style="flex:1"></div>
+
+      <!-- Imaginea bear.png - asigură-te că fisierul bear.png este în același folder -->
+      <div class="bear-wrap" aria-hidden="false">
+        <img src="bear.png" alt="Ursuleț cu un trandafir" class="bear" />
+      </div>
+    </main>
+
+    <footer>
+      <small>© 2025 — creat pentru tine ❤️</small>
+    </footer>
+  </div>
+</body>
+</html>
